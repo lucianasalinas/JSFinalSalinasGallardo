@@ -141,3 +141,21 @@ export default class presuTracker {
         this.save();
     }
 }
+
+const url = 'https://currency-exchange.p.rapidapi.com/exchange?from=USD&to=ARS&q=1.0';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'f5bee3242fmsh2484cabe20b79b6p172cd6jsn0ad1d03e1577',
+		'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
+	}
+};
+
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
